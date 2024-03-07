@@ -83,13 +83,14 @@ get_header()
                 </nav> -->
 
             </div>
-            <div class="col-lg-3">
+            <?php get_sidebar(); ?>
+            <!-- <div class="col-lg-3">
                 <div class="card-body">
                     <h4>Publicidad</h4>
                     <hr>
                     <img src="https://via.placeholder.com/360x600" alt="" class="img-fluid">
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>
