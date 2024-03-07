@@ -1,5 +1,16 @@
 <?php
 
+
+if ( !function_exists( 'my_theme_setup' ) ) {
+    /* Theme Setup */
+    function my_theme_setup() {
+        add_theme_support( 'title-tag' );
+        add_theme_support( 'post-thumbnails' );
+    }
+
+    add_action('after_setup_theme', 'my_theme_setup' );
+}
+
     wp_enqueue_style( 'bootstrap', get_theme_file_uri('css/bootstrap.min.css'), false, '1.1', 'all');
 
 
