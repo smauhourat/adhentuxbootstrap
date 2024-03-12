@@ -20,6 +20,11 @@ get_header()
 	                            'title' => 'Feature image',
                             ]); ?>
                             <p class="card-text"><?php the_content(); ?></p>
+                            <?php 
+                                if (comments_open() || get_comment($comment, $output) ) {
+                                    comments_template();
+                                }
+                            ?>
                         </div>
                     </div>
 

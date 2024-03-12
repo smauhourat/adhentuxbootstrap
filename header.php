@@ -12,7 +12,7 @@
 
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/yeti/bootstrap.min.css"> -->
 
-    <title>Hello, world!</title>
+    <!-- <title>Hello, world!</title> -->
     <?php
         wp_head()
     ?>
