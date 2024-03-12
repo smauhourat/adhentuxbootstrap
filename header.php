@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html <?php language_attributes() ?>>
 
 <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
@@ -18,31 +18,31 @@
     ?>
 </head>
 
-<body>
+<body <?php body_class() ?> >
     <!-- menu -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container mw-100">
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">Logo</a>
 
-    <?php
-wp_nav_menu( array(
-    'theme_location'  => 'header-menu',
-    'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
-    'container'       => 'div',
-    'container_class' => 'collapse navbar-collapse',
-    'container_id'    => 'bs-example-navbar-collapse-1',
-    'menu_class'      => 'navbar-nav mr-auto',
-    'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-    'walker'          => new WP_Bootstrap_Navwalker(),
-) );    
-?>            
+            <?php
+            wp_nav_menu( array(
+                'theme_location'  => 'header-menu',
+                'depth'           => 3, // 1 = no dropdowns, 2 = with dropdowns.
+                'container'       => 'div',
+                'container_class' => 'collapse navbar-collapse',
+                'container_id'    => 'navbarSupportedContent',
+                'menu_class'      => 'navbar-nav ml-auto',
+                'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                'walker'          => new WP_Bootstrap_Navwalker(),
+            ) );    
+            ?>            
 
-            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+            <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="navbar-nav ml-auto">
                     <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="#">Features</a>
